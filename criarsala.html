@@ -1,0 +1,38 @@
+<!-- <?php
+echo "Seu ambiente <br> aqui fica lista de sala e o usuario, cadastrar o sensor editar e  o analisar dados <br>";
+
+session_start();
+
+if (isset($_SESSION['idUser'])) {
+    $idUser = $_SESSION['idUser'];
+    echo " \n ID do Usuário: ";
+    var_dump($idUser);  
+} else {
+    header('Location: login.php');
+    exit(); // Redireciona para login se não estiver autenticado
+}
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h2>Cadastra sala</h2>
+    <form
+      action="http://localhost/projetoAci/app/views/salas/CreateSalas.php"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="Usuario_IdUsuario"
+        value="<?php echo $_SESSION['idUser']; ?>"
+      />
+      <button type="submit">Cadastrar Sala</button>
+    </form>
+  </body>
+</html>
